@@ -1,0 +1,25 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: deployment-app-n1co
+  labels:
+    app: app-n1co
+
+spec:
+  selector:
+    matchLabels:
+      proyecto: app-n1co
+  replicas: 2
+
+  template:
+    metadata:
+      name: app
+      labels:
+        proyecto: app-n1co
+    
+    spec:
+      containers:
+        - name: app
+          image: camilobotero/app_n1co
